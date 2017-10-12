@@ -10,31 +10,31 @@ import java.util.UUID;
 public class Todo {
 
     private UUID mTodoId;
-    private String mTodo;
+    private String mTodoTitle;
     private String mTodoDetail;
     private Date mTodoDate;
-    private boolean mTodoComplete;
+    private boolean mTodoIsComplete;
 
     public Todo() {
         mTodoId = UUID.randomUUID();
         mTodoDate = new Date();
     }
 
-    public void setTodoComplete(boolean todoComplete) {
-        mTodoComplete = todoComplete;
+    public void setTodoIsComplete(boolean todoIsComplete) {
+        mTodoIsComplete = todoIsComplete;
     }
 
-    public boolean isTodoComplete() {
+    public boolean isTodoIsComplete() {
 
-        return mTodoComplete;
+        return mTodoIsComplete;
     }
 
     public UUID getTodoId() {
         return mTodoId;
     }
 
-    public String getTodo() {
-        return mTodo;
+    public String getTodoTitle() {
+        return mTodoTitle;
     }
 
     public String getTodoDetail() {
@@ -49,8 +49,8 @@ public class Todo {
         mTodoId = todoId;
     }
 
-    public void setTodo(String todo) {
-        mTodo = todo;
+    public void setTodoTitle(String todoTitle) {
+        mTodoTitle = todoTitle;
     }
 
     public void setTodoDetail(String todoDetail) {
