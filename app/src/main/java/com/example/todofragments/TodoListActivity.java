@@ -10,6 +10,7 @@ public class TodoListActivity extends SingleTodoFragmentActivity {
 
     @Override
     protected Fragment createFragment() {
+
         return new TodoListFragment();
     }
 
