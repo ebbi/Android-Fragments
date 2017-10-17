@@ -1,39 +1,31 @@
 package com.example.todofragments;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
-public class TodoActivity extends SingleTodoFragmentActivity {
+/**
+ * Created by Ebbi on 17/10/2017.
+ */
 
-    @Override
-    protected Fragment createFragment() {
-        return new TodoFragment();
-    }
-}
+public abstract class SingleTodoFragmentActivity extends AppCompatActivity {
 
-/*
-The following code is common to every activity hence it is abstracted to an
-Abstract class SingleTodoFragmentActivity for sharing this common code
-
-public class TodoActivity extends AppCompatActivity {
+    protected abstract Fragment createFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_todo_fragment);
         setContentView(R.layout.activity_todo_fragment);
 
         FragmentManager fm = getSupportFragmentManager();
         Fragment fragment = fm.findFragmentById(R.id.fragment_container);
 
         if (fragment == null){
-            fragment = new TodoFragment();
+            fragment = createFragment();
             fm.beginTransaction()
                     .add(R.id.fragment_container, fragment)
                     .commit();
         }
     }
 }
-*/

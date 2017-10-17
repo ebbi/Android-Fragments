@@ -7,6 +7,7 @@
               android:weightSum="1">
 
     <TextView
+        android:id="@+id/todo_detail_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/todo_title_label"
@@ -19,16 +20,16 @@
         android:hint="@string/todo_title_hint"/>
 
     <TextView
+        android:id="@+id/todo_detail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/todo_detail_label"
-    />
+        android:layout_height="@android:dimen/notification_large_icon_height"
+        android:text="@string/todo_detail_label"/>
 
     <Button
         android:id="@+id/todo_date"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.92"/>
+        android:layout_height="wrap_content"
+        />
 
     <CheckBox
         android:id="@+id/todo_complete"
