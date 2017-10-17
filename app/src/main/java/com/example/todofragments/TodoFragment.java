@@ -21,9 +21,6 @@ import android.widget.EditText;
 public class TodoFragment extends Fragment {
 
     private Todo mTodo;
-    private EditText mEditTextTitle;
-    private Button mButtonDate;
-    private CheckBox mCheckBoxIsComplete;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -39,8 +36,8 @@ public class TodoFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_todo, container, false);
 
-        mEditTextTitle = (EditText) view.findViewById(R.id.todo_title);
-        mEditTextTitle.addTextChangedListener(new TextWatcher() {
+        EditText editTextTitle = (EditText) view.findViewById(R.id.todo_title);
+        editTextTitle.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 // This line is intentionally left blank
@@ -57,12 +54,12 @@ public class TodoFragment extends Fragment {
             }
         });
 
-        mButtonDate = (Button) view.findViewById(R.id.todo_date);
-        mButtonDate.setText(mTodo.getTodoDate().toString());
-        mButtonDate.setEnabled(false);
+        Button buttonDate = (Button) view.findViewById(R.id.todo_date);
+        buttonDate.setText(mTodo.getTodoDate().toString());
+        buttonDate.setEnabled(false);
 
-        mCheckBoxIsComplete = (CheckBox) view.findViewById(R.id.todo_complete);
-        mCheckBoxIsComplete.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+        CheckBox checkBoxIsComplete = (CheckBox) view.findViewById(R.id.todo_complete);
+        checkBoxIsComplete.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 mTodo.setTodoIsComplete(isChecked);
