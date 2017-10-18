@@ -61,7 +61,7 @@ public class TodoListFragment extends Fragment {
         private TextView mTextViewDate;
 
         public TodoHolder(LayoutInflater inflater, ViewGroup parent) {
-            super(inflater.inflate(R.layout.list_item_todo, parent, false));
+            super(inflater.inflate(R.layout.todo_list_item, parent, false));
 
             mTextViewTitle = (TextView) itemView.findViewById(R.id.textViewTodoTitle);
             mTextViewDate = (TextView) itemView.findViewById(R.id.textViewTodoDate);
